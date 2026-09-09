@@ -18,6 +18,9 @@ import CreateProjectModal from "../../components/projects/CreateProjectModal";
 
 import { getAnalytics } from "../../services/analyticsService";
 
+const API_BASE_URL =
+    import.meta.env.VITE_API_URL;
+
 /* =========================================================
    PROJECT TYPE
 ========================================================= */
@@ -137,7 +140,7 @@ const Dashboard = () => {
 
                 const response =
                     await axios.get(
-                        "http://localhost:5000/api/projects",
+                        `${API_BASE_URL}/api/projects`,
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -203,7 +206,7 @@ const Dashboard = () => {
 
                 const response =
                     await axios.get(
-                        "http://localhost:5000/api/notifications",
+                        `${API_BASE_URL}/api/notifications`,
                         {
                             headers: {
                                 Authorization: `Bearer ${token}`,
@@ -385,15 +388,11 @@ const Dashboard = () => {
 
                 <div className="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-orange-500/[0.045] blur-[150px]" />
 
-                {/* =================================================
-                    CONTENT
-                ================================================= */}
+                {/* CONTENT */}
 
                 <div className="relative mx-auto max-w-[1600px] px-5 py-8 sm:px-7 lg:px-9 lg:py-10">
 
-                    {/* =================================================
-                        WELCOME
-                    ================================================= */}
+                    {/* WELCOME */}
 
                     <div className="mb-8 flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
 
@@ -438,9 +437,7 @@ const Dashboard = () => {
 
                     </div>
 
-                    {/* =================================================
-                        STATS
-                    ================================================= */}
+                    {/* STATS */}
 
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
 
@@ -648,15 +645,11 @@ const Dashboard = () => {
 
                     </div>
 
-                    {/* =================================================
-                        PROJECTS + ACTIVITY
-                    ================================================= */}
+                    {/* PROJECTS + ACTIVITY */}
 
                     <div className="mt-5 grid grid-cols-1 gap-5 xl:grid-cols-3">
 
-                        {/* =================================================
-                            RECENT PROJECTS
-                        ================================================= */}
+                        {/* RECENT PROJECTS */}
 
                         <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0d0d0d] xl:col-span-2">
 
@@ -894,9 +887,7 @@ const Dashboard = () => {
 
                         </div>
 
-                        {/* =================================================
-                            RECENT ACTIVITY
-                        ================================================= */}
+                        {/* RECENT ACTIVITY */}
 
                         <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#0d0d0d]">
 
@@ -1029,9 +1020,7 @@ const Dashboard = () => {
 
                     </div>
 
-                    {/* =================================================
-                        QUICK ACTIONS
-                    ================================================= */}
+                    {/* QUICK ACTIONS */}
 
                     <div className="mt-6">
 
@@ -1187,9 +1176,7 @@ const Dashboard = () => {
 
                 </div>
 
-                {/* =================================================
-                    CREATE PROJECT MODAL
-                ================================================= */}
+                {/* CREATE PROJECT MODAL */}
 
                 <CreateProjectModal
                     open={

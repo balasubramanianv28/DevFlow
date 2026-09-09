@@ -59,7 +59,7 @@ const Projects = () => {
                 const token = localStorage.getItem("devflow_token");
 
                 const response = await axios.get(
-                    "http://localhost:5000/api/projects",
+                    `${import.meta.env.VITE_API_URL}/api/projects`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,

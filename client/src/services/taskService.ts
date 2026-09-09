@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/api/tasks";
-
+const API_URL =
+    `${import.meta.env.VITE_API_URL}/api/tasks`;
 export interface Task {
     _id: string;
     title: string;
